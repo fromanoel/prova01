@@ -7,11 +7,13 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
+@ToString(exclude = "id")
 public class Endereco {
 
     @Id
@@ -28,12 +30,11 @@ public class Endereco {
 
     private String CEP;
 
-    public Endereco(String rua, String numero, String cidade, String estado, String CEP) {
-        this.rua = rua;
-        this.numero = numero;
-        this.cidade = cidade;
-        this.estado = estado;
-        this.CEP = CEP;
+    private String enderecoCompleto = rua + ", " + numero + ", " + cidade + ", " + estado + ", " + CEP;
+
+    public String getEnderecoCompleto() {
+        return enderecoCompleto;
     }
+
 
 }
