@@ -29,11 +29,21 @@ public class Endereco {
     private String estado;
 
     private String CEP;
+ 
 
-    private String enderecoCompleto = rua + ", " + numero + ", " + cidade + ", " + estado + ", " + CEP;
+    public Endereco(Long id, String rua, String numero, String cidade, String estado, String CEP) {
+        this.id = id;
+        this.rua = rua;
+        this.numero = numero;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.CEP = CEP;
+
+    }
+
 
     public String getEnderecoCompleto() {
-        return enderecoCompleto;
+        return rua + ", " + numero + ", " + cidade + ", " + estado + ", " + CEP;
     }
 
 

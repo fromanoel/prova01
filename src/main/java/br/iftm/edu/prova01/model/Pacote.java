@@ -47,14 +47,14 @@ public class Pacote {
         this.statusEntrega = novoStatus;
         Rastreamento rastreamento = new Rastreamento();
         rastreamento.setDataHora(dataHora);
-        rastreamento.setStatus(novoStatus);
+        rastreamento.setStatusRastreamento(novoStatus);
         rastreamento.setLocalizacao(localizacao);
         rastreamento.setPacote(this);
         rastreamentos.add(rastreamento);
     }
 
     public String consultarInformacoes() {
-        return "Pacote: " + idString + ", Destinatário: " + destinatario + ", Endereço: " + endereco.getEnderecoCompleto() + ", Status: " + statusEntrega + ".";
+        return "ID: " + idString + ", Destinatário: " + destinatario + ", Endereço: " + endereco.getEnderecoCompleto() + ", Status: " + statusEntrega + ", Rastreamento histórico: " + rastreamentos;
     }
 
 

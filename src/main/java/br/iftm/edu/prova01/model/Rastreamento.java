@@ -26,7 +26,7 @@ public class Rastreamento {
 
     private Date dataHora;
 
-    private String status;
+    private String statusRastreamento;
 
     private String localizacao;
 
@@ -34,7 +34,16 @@ public class Rastreamento {
     @JoinColumn(name = "pacote_id")
     private Pacote pacote;
 
-    private String resumo = "Data e hora: " + dataHora + ", Status: " + status + ", Localização: " + localizacao;
+    public Rastreamento(Date dataHora, String status, String localizacao) {
+        this.dataHora = dataHora;
+        this.statusRastreamento = status;
+        this.localizacao = localizacao;
+    }
+
+
+    public String getResumo(){
+        return "Data e Hora: " + dataHora + ", Status: " + statusRastreamento + ", Localização: " + localizacao + ".";
+    }
 
     
 }
