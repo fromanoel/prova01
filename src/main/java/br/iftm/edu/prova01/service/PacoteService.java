@@ -31,7 +31,12 @@ public class PacoteService {
     }
 
     public Pacote atualizaPacote(Long id){
-        return pacoteRepository.save(buscaPacoteEspecifico(id));
+        Pacote pacote = buscaPacoteEspecifico(id);
+        pacote.setDestinatario(pacote.getDestinatario());
+        pacote.setEndereco(pacote.getEndereco());
+        pacote.setStatusEntrega(pacote.getStatusEntrega());
+        pacote.setEndereco(pacote.getEndereco());
+        return pacoteRepository.save(pacote);
     }
 
     public void deletaPacote(Long id){

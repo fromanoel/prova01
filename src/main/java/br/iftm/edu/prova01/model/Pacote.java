@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,7 +34,7 @@ public class Pacote {
 
     private String statusEntrega;
 
-    @OneToMany(mappedBy = "pacote")
+    @OneToMany
     private List<Rastreamento> rastreamentos = new ArrayList<Rastreamento>();
 
     public Pacote(String idString, String destinatario, Endereco endereco, String statusEntrega) {
@@ -49,7 +50,6 @@ public class Pacote {
         rastreamento.setDataHora(dataHora);
         rastreamento.setStatusRastreamento(novoStatus);
         rastreamento.setLocalizacao(localizacao);
-        rastreamento.setPacote(this);
         rastreamentos.add(rastreamento);
     }
 

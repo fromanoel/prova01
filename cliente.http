@@ -1,0 +1,88 @@
+#Requisicoes HTTP
+
+#PROVA 01
+# ------------------
+
+### ADICIONA NOVO ENDERECO
+POST /endereco HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+	"rua": "Av. Solimoes",
+	"numero": "200",
+    "cidade": "Uberlandia",
+    "estado": "MG",
+    "cep": "38400-000"
+}
+
+### ADICIONA OUTRO ENDERECO 
+POST /endereco HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+	"rua": "Av. Goitata",
+	"numero": "100",
+    "cidade": "Uberlandia",
+    "estado": "MG",
+    "cep": "39400-999"
+}
+
+### CONSULTA TODOS OS ENDERECOS CADASTRADOS
+GET /endereco HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### RASTREAMENTO 
+
+### Consulta todos os rastreamentos de um pacote específico.
+GET /rastreamentos/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### PACOTES
+
+### Adiciona um novo pacote.
+POST /pacotes HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "idString": "2",
+	"destinatario": "Joao Lucas",
+    "endereco": {
+        "id": 1
+    },
+    "statusEntrega": "Em andamento"
+}
+
+### Consulta todos os pacotes.
+GET /pacotes HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+
+
+###  Consulta um pacote específico.
+GET /pacotes/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### Atualiza as informações de um pacote
+PUT /pacotes/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "destinatario": "Marcos Paulo",
+    "endereco": {
+        "id": 1
+    },
+    "statusEntrega": "Entregue",
+}
+
+### Remove um pacote.
+DELETE /pacotes/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json

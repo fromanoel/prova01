@@ -10,6 +10,5 @@ import br.iftm.edu.prova01.model.Rastreamento;
 @Repository
 public interface RastreamentoRepository extends CrudRepository<Rastreamento, Long> {
 
-    List<Rastreamento> findByPacoteId(Long id);
     
 }

@@ -30,9 +30,6 @@ public class Rastreamento {
 
     private String localizacao;
 
-    @ManyToOne
-    @JoinColumn(name = "pacote_id")
-    private Pacote pacote;
 
     public Rastreamento(Date dataHora, String status, String localizacao) {
         this.dataHora = dataHora;
